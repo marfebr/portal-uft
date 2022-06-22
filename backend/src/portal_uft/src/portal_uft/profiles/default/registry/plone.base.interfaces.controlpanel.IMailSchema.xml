@@ -2,8 +2,12 @@
 <registry>
   <records interface="plone.base.interfaces.controlpanel.IMailSchema"
            prefix="plone"
-           purge="false"
   >
+    <value key="email_charset">utf-8</value>
+    <value key="email_from_address">uft@uft.edu.br</value>
     <value key="email_from_name">Portal UFT</value>
+    <value key="smtp_host">vinagreira.uft.edu.br</value>
+    <value key="smtp_port">25</value>
+    <value key="smtp_userid">naoresponder@dti.uft.edu.br</value>
   </records>
 </registry>
