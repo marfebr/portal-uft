@@ -3,17 +3,26 @@
     xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
     >
 
-  Example upgrade step
-  <!-- <genericsetup:upgradeSteps -->
-  <!--     profile="portal_uft:default" -->
-  <!--     source="20220622001" -->
-  <!--     destination="20220622002" -->
-  <!--     > -->
-  <!--   <genericsetup:upgradeDepends -->
-  <!--       title="Conf. do ex 08" -->
-  <!--       import_steps="plone.app.registry" -->
-  <!--       /> -->
-  <!-- </genericsetup:upgradeSteps> -->
+  <genericsetup:upgradeSteps
+      profile="portal_uft:default"
+      source="20220622001"
+      destination="20220622002"
+      >
+    <genericsetup:upgradeDepends
+        title="Add person type"
+        import_steps="typeinfo"
+        />
+  </genericsetup:upgradeSteps>
 
+  <genericsetup:upgradeSteps
+      profile="portal_uft:default"
+      source="20220622002"
+      destination="20220622003"
+      >
+    <genericsetup:upgradeDepends
+        title="Apply lead image behavior to a Person"
+        import_steps="typeinfo"
+        />
+  </genericsetup:upgradeSteps>
 
 </configure>

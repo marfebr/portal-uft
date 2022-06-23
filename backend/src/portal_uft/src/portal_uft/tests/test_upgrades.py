@@ -38,9 +38,17 @@ class UpgradeStepIntegrationTest(unittest.TestCase):
 
 
 # Example of upgrade step test
-# class V20220622001UpgradeTest(UpgradeStepIntegrationTest):
-#     """Test upgrade step from version 20220622001."""
+class V20220622001UpgradeTest(UpgradeStepIntegrationTest):
+    """Test upgrade step from version 20220622001."""
 
-#     src = "20220622001"
-#     dst = "20230229001"
-#     steps = 1
+    src = "20220622001"
+    dst = "20220622002"
+    steps = 1
+
+
+class V20220622002UpgradeTest(UpgradeStepIntegrationTest):
+    """Test upgrade step from version 20220622002."""
+
+    src = "20220622002"
+    dst = "20220622003"
+    steps = 1
