@@ -3,20 +3,10 @@ from plone.dexterity.content import Container
 from plone.schema.email import Email
 from plone.supermodel.model import Schema
 from portal_uft import _
+from portal_uft import validators
 from zope import schema
 from zope.interface import implementer
-
-import re
-
-
-def is_valid_email(value: str) -> bool:
-    """Check if email is valid"""
-    return value.endswith("@uft.edu.br")
-
-
-def is_valid_ramal(value: str) -> bool:
-    """Check if ramal is valid"""
-    return re.match(r"\d\d\d\d", value)
+from zope.interface import invariant
 
 
 class IPerson(Schema):
@@ -30,11 +20,26 @@ class IPerson(Schema):
     email = Email(
         title=_("person_email", default="Email"),
         required=True,
-        constraint=is_valid_email,
+        # constraint=validators.is_valid_email,
     )
     extension = schema.TextLine(
-        title=_("Extension"), required=False, constraint=is_valid_ramal
+        title=_("Extension"), required=False, constraint=validators.is_valid_ramal
     )
+
+    @invariant
+    def validate_email(data):
+        """Validate email"""
+
+        value = data.email
+        title = data.title
+        if not (value and validators.is_valid_email(value)):
+            raise validators.BadValue(
+                f"The email {value} not in the uft.edu.br domain."
+            )
+        elif not validators.is_valid_username(title, value):
+            raise validators.BadValue(
+                f"The email {value} does not follow our standard."
+            )
 
 
 @implementer(IPerson)
