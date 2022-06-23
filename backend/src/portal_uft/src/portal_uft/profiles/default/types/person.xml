@@ -30,6 +30,7 @@
     <element value="plone.shortname" />
     <element value="plone.leadimage" />
     <element value="plone.namefromtitle" />
+    <element value="portal_uft.contact_info" />
   </property>
   <property name="schema">portal_uft.content.person.IPerson</property>
   <property name="model_source" />

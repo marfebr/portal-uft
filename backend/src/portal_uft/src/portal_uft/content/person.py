@@ -17,14 +17,14 @@ class IPerson(Schema):
         title=_("perso_description", default="Biography"), required=False
     )
 
-    email = Email(
-        title=_("person_email", default="Email"),
-        required=True,
-        # constraint=validators.is_valid_email,
-    )
-    extension = schema.TextLine(
-        title=_("Extension"), required=False, constraint=validators.is_valid_ramal
-    )
+    # email = Email(
+    #     title=_("person_email", default="Email"),
+    #     required=True,
+    #     # constraint=validators.is_valid_email,
+    # )
+    # extension = schema.TextLine(
+    #     title=_("Extension"), required=False, constraint=validators.is_valid_ramal
+    # )
 
     @invariant
     def validate_email(data):

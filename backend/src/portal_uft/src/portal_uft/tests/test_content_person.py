@@ -1,16 +1,17 @@
 from kitconcept import api
 from plone.app.testing import setRoles
 from plone.app.testing import TEST_USER_ID
+from portal_uft import validators
 from portal_uft.content.person import IPerson
 from portal_uft.testing import PORTAL_UFT_INTEGRATION_TESTING
-from portal_uft import validators
 from zope.component import createObject
 
 import unittest
 
 
 class MockPerson:
-    """ Mock of a person  """
+    """Mock of a person"""
+
 
 class PersonIntegrationTest(unittest.TestCase):
 
