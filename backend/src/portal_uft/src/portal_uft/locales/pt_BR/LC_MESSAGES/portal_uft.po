@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2022-06-23 00:35+0000\n"
+"POT-Creation-Date: 2022-06-23 17:07+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,7 +18,7 @@ msgstr ""
 msgid "Education"
 msgstr ""
 
-#: portal_uft/content/person.py:14
+#: portal_uft/content/person.py:19
 msgid "Extension"
 msgstr "Ramal"
 
@@ -37,6 +37,10 @@ msgstr ""
 #: portal_uft/profiles/default/types/person.xml
 msgid "Person"
 msgstr "Perfil"
+
+#: portal_uft/profiles/default/types/person.xml
+msgid "Person in the site"
+msgstr ""
 
 #: portal_uft/profiles.zcml:13
 msgid "Policy package to install our site"
@@ -58,7 +62,17 @@ msgstr "Portal UFT: Desinstalação"
 msgid "Uninstall Portal UFT setup."
 msgstr "Desinstala de configurações do Portal da UFT"
 
+#. Default: "Biography"
+#: portal_uft/content/person.py:15
+msgid "perso_description"
+msgstr ""
+
 #. Default: "Email"
-#: portal_uft/content/person.py:13
+#: portal_uft/content/person.py:18
 msgid "person_email"
 msgstr "Email"
+
+#. Default: "Fullname"
+#: portal_uft/content/person.py:13
+msgid "person_title"
+msgstr "Nome Completo"
