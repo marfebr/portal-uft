@@ -2,10 +2,10 @@ from plone.autoform.interfaces import IFormFieldProvider
 from plone.schema.email import Email
 from plone.supermodel import model
 from portal_uft import _
-from zope import schema
 from portal_uft import validators
-from zope.interface import provider
+from zope import schema
 from zope.interface import invariant
+from zope.interface import provider
 
 
 @provider(IFormFieldProvider)
@@ -36,4 +36,3 @@ class IContactInfo(model.Schema):
             raise validators.BadValue(
                 f"The email {value} does not follow our standard."
             )
-

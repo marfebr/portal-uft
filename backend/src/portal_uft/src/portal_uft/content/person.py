@@ -1,6 +1,7 @@
 """person profile in the site"""
 from plone.dexterity.content import Container
-from plone.schema.email import Email
+
+# from plone.schema.email import Email
 from plone.supermodel.model import Schema
 from portal_uft import _
 from portal_uft import validators
