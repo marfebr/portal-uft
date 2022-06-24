@@ -3,7 +3,6 @@ from plone.app.testing import setRoles
 from plone.app.testing import TEST_USER_ID
 from portal_uft.testing import PORTAL_UFT_INTEGRATION_TESTING  # noqa: E501
 from Products.GenericSetup.upgrade import listUpgradeSteps
-
 import unittest
 
 
@@ -54,7 +53,7 @@ class V20220622002UpgradeTest(UpgradeStepIntegrationTest):
     steps = 1
 
 
-class V20220622002UpgradeTest(UpgradeStepIntegrationTest):
+class V20220622003UpgradeTest(UpgradeStepIntegrationTest):
     """Test upgrade step from version 20220622003."""
 
     src = "20220622003"
