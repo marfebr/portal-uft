@@ -8,9 +8,16 @@ from zope.interface import implementer
 class ICampus(Schema):
     """Scheme of campus"""
 
-    title = schema.TextLine(title=_("campus_title", default="Campus"), required=True)
+    title = schema.Choice(
+        title=_("city", default="City"),
+        vocabulary="portal_uft.vocabulary.cities",
+        required=True,
+    )
 
-    description = schema.Text(title=_("campus_city", default="City"), required=True)
+    description = schema.Text(
+        title=_("campus_nome", default="Campus"),
+        required=True,
+    )
 
     # director = RelationChoice(
     #     title=_("director_person", default="Director"),
