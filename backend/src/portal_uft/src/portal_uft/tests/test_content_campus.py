@@ -53,3 +53,15 @@ class CampusIntegrationTest(unittest.TestCase):
         )
         self.assertTrue(ICampus.providedBy(obj))
         self.assertEqual(obj, self.portal["caja"])
+
+    def test_subscriber_added(self):
+        obj = api.content.create(
+            container=self.portal,
+            type=self.portal_type,
+            title="Palmas",
+            description="Campus da UFT em Palmas",
+            email="palmas@uft.edu.br",
+            city="palmas",
+            extension="2022",
+        )
+        self.assertIn("Campus: palmas", obj.subject)
