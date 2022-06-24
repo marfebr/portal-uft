@@ -4,7 +4,8 @@ from plone.dexterity.content import Container
 from plone.supermodel.model import Schema
 from portal_uft import _
 from portal_uft import validators
-from z3c.relationfield import RelationChoice
+
+# from z3c.relationfield import RelationChoice
 from zope import schema
 from zope.interface import implementer
 from zope.interface import invariant
@@ -17,11 +18,11 @@ class ICampus(Schema):
 
     description = schema.Text(title=_("campus_city", default="City"), required=True)
 
-    director = RelationChoice(
-        title=_("director_person", default="Director"),
-        vocabulary="portal_uft.content.person",
-        required=True,
-    )
+    # director = RelationChoice(
+    #     title=_("director_person", default="Director"),
+    #     vocabulary="portal_uft.vocabulary.person",
+    #     required=True,
+    # )
 
 
 @implementer
