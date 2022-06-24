@@ -3,6 +3,7 @@ from plone.app.testing import setRoles
 from plone.app.testing import TEST_USER_ID
 from portal_uft.testing import PORTAL_UFT_INTEGRATION_TESTING  # noqa: E501
 from Products.GenericSetup.upgrade import listUpgradeSteps
+
 import unittest
 
 
