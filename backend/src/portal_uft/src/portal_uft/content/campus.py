@@ -19,6 +19,7 @@ class ICampus(Schema):
         title=_("campus_nome", default="Campus"),
         required=True,
     )
+    description = schema.Text(title=_("campus_description"), required=False)
 
     # director = RelationChoice(
     #     title=_("director_person", default="Director"),
