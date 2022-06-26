@@ -17,6 +17,13 @@ def _update_tags(obj: Campus):
 
 def added(obj: Campus, event: ObjectAddedEvent):
     """Post creation handler for Campus."""
+    # Verificar se grupo existe
+    group = api.group.get(groupname=obj.title)
+    #criar caso não exista
+    if not group:
+        api.group.create(
+        groupname=obj.title,
+        )
     _update_tags(obj)
 
 

@@ -52,8 +52,10 @@ class CampusIntegrationTest(unittest.TestCase):
             email="palmas@uft.edu.br",
             extension="2022",
         )
+        group = api.group.get(groupname=obj.title)
         self.assertTrue(ICampus.providedBy(obj))
         self.assertEqual(obj, self.portal["palmas"])
+        self.assertIsNotNone(group)
 
     def test_subscriber_added(self):
         obj = api.content.create(
