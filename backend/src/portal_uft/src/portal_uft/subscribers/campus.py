@@ -8,7 +8,7 @@ def _update_tags(obj: Campus):
     """Update tags on Campus object."""
     vocab = api.vocabulary.get("portal_uft.vocabulary.cities")
     # tags = set(obj.subject)
-    tags = { tag for tag in obj.subject if not tag.startswith("Campus: ")}
+    tags = {tag for tag in obj.subject if not tag.startswith("Campus: ")}
     city = obj.city
     term = vocab.getTermByToken(city)
     tags.add(f"Campus: {term.title}")
@@ -19,10 +19,10 @@ def added(obj: Campus, event: ObjectAddedEvent):
     """Post creation handler for Campus."""
     # Verificar se grupo existe
     group = api.group.get(groupname=obj.title)
-    #criar caso não exista
+    # criar caso não exista
     if not group:
         api.group.create(
-        groupname=obj.title,
+            groupname=obj.title,
         )
     _update_tags(obj)
 
