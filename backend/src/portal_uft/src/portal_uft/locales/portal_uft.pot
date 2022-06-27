@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2022-06-24 18:18+0000\n"
+"POT-Creation-Date: 2022-06-27 20:48+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,6 +21,10 @@ msgstr ""
 msgid "Add e-mail and extension fields to a contact."
 msgstr ""
 
+#: portal_uft/src/portal_uft/behaviors/contact_info.py:13
+msgid "Contact"
+msgstr ""
+
 #: portal_uft/src/portal_uft/behaviors/configure.zcml:11
 msgid "Contact Information"
 msgstr ""
@@ -29,7 +33,7 @@ msgstr ""
 msgid "Education"
 msgstr ""
 
-#: portal_uft/src/portal_uft/behaviors/contact_info.py:19
+#: portal_uft/src/portal_uft/behaviors/contact_info.py:17
 msgid "Extension"
 msgstr ""
 
@@ -77,8 +81,12 @@ msgstr ""
 msgid "Uninstall Portal UFT setup."
 msgstr ""
 
+#: portal_uft/src/portal_uft/content/campus.py:22
+msgid "campus_description"
+msgstr ""
+
 #. Default: "Campus"
-#: portal_uft/src/portal_uft/content/campus.py:18
+#: portal_uft/src/portal_uft/content/campus.py:19
 msgid "campus_nome"
 msgstr ""
 
@@ -93,7 +101,7 @@ msgid "perso_description"
 msgstr ""
 
 #. Default: "E-mail"
-#: portal_uft/src/portal_uft/behaviors/contact_info.py:16
+#: portal_uft/src/portal_uft/behaviors/contact_info.py:14
 msgid "person_email"
 msgstr ""
 

@@ -1,6 +1,19 @@
 /*-------------------
 breadcrumbs
 --------------------*/
-.ui.breadcrumb a.section {
-  color: green;
+
+body.contenttype-plone-site {
+  .ui.secondary.segment.breadcrumbs {
+    display: none;
+  }
+}
+
+.ui.breadcrumb {
+  a.section {
+    color: green;
+  }
+
+  section.active {
+    color: black;
+  }
 }
