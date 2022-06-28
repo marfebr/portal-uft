@@ -60,3 +60,10 @@ class V20220622003UpgradeTest(UpgradeStepIntegrationTest):
     src = "20220622003"
     dst = "20220623001"
     steps = 1
+
+class V20220623001UpgradeTest(UpgradeStepIntegrationTest):
+    """Test upgrade step from version 20220622003."""
+
+    src = "20220623001"
+    dst = "20220626001"
+    steps = 1

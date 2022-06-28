@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2022-06-27 20:48+0000\n"
+"POT-Creation-Date: 2022-06-28 19:33+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,6 +19,14 @@ msgstr ""
 
 #: portal_uft/src/portal_uft/behaviors/configure.zcml:11
 msgid "Add e-mail and extension fields to a contact."
+msgstr ""
+
+#: portal_uft/src/portal_uft/profiles/default/types/campus.xml
+msgid "Campus"
+msgstr ""
+
+#: portal_uft/src/portal_uft/profiles/default/types/campus.xml
+msgid "Campus in the site"
 msgstr ""
 
 #: portal_uft/src/portal_uft/behaviors/contact_info.py:13
@@ -81,23 +89,19 @@ msgstr ""
 msgid "Uninstall Portal UFT setup."
 msgstr ""
 
-#: portal_uft/src/portal_uft/content/campus.py:22
-msgid "campus_description"
-msgstr ""
-
-#. Default: "Campus"
-#: portal_uft/src/portal_uft/content/campus.py:19
-msgid "campus_nome"
-msgstr ""
-
 #. Default: "City"
-#: portal_uft/src/portal_uft/content/campus.py:12
+#: portal_uft/src/portal_uft/content/campus.py:15
 msgid "city"
 msgstr ""
 
 #. Default: "Biography"
-#: portal_uft/src/portal_uft/content/person.py:18
+#: portal_uft/src/portal_uft/content/person.py:21
 msgid "perso_description"
+msgstr ""
+
+#. Default: "Campus"
+#: portal_uft/src/portal_uft/content/person.py:25
+msgid "person_campus"
 msgstr ""
 
 #. Default: "E-mail"
@@ -106,6 +110,6 @@ msgid "person_email"
 msgstr ""
 
 #. Default: "Fullname"
-#: portal_uft/src/portal_uft/content/person.py:16
+#: portal_uft/src/portal_uft/content/person.py:19
 msgid "person_title"
 msgstr ""

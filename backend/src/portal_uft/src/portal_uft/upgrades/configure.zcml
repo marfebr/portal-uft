@@ -36,6 +36,17 @@
         />
   </genericsetup:upgradeSteps>
 
+  <genericsetup:upgradeSteps
+      profile="portal_uft:default"
+      source="20220623001"
+      destination="20220626001"
+      >
+    <genericsetup:upgradeDepends
+        title="Corrigir Campus"
+        import_steps="typeinfo"
+        />
+  </genericsetup:upgradeSteps>
+
 
 
 </configure>
