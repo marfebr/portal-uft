@@ -45,7 +45,7 @@ class PopulaPortal(object):
             json=obj,
         )
         if response.status_code == 404:
-        # Content does not exist yet, create
+            # Content does not exist yet, create
             response = requests.post(
                 url,
                 headers=self.headers,
@@ -76,7 +76,6 @@ class PopulaPortal(object):
         else:
             # oops
             print(f"ERROR: {url} {response.text}")
-
 
 
 if __name__ == "__main__":
