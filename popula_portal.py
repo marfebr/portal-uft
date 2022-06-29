@@ -5,7 +5,7 @@ import requests
 
 base_url = "http://localhost:8080/Plone/++api++"
 username = "admin"
-password = "admin"
+password = "foobar"
 
 headers = {"Accept": "application/json", "Content-Type": "application/json"}
 
