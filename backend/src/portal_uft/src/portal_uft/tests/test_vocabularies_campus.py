@@ -1,7 +1,6 @@
 from kitconcept import api
-
-from plone.app.testing import TEST_USER_ID
 from plone.app.testing import setRoles
+from plone.app.testing import TEST_USER_ID
 from portal_uft.testing import PORTAL_UFT_INTEGRATION_TESTING
 
 import unittest
