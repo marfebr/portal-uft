@@ -20,18 +20,27 @@ class IPerson(Schema):
     description = schema.Text(
         title=_("perso_description", default="Biography"), required=False
     )
-
-    campus = RelationList(
+    campus = schema.Set(
         title=_("person_campus", default="Campus"),
         required=False,
-        default=[],
-        value_type=RelationChoice(
+        default=set(),
+        value_type=schema.Choice(
             title=_("person_campus", default="Campus"),
-            vocabulary=StaticCatalogVocabulary(
-                {"portal_type": ["campus"], "review_state": "published"}
-            ),
+            vocabulary="portal_uft.vocabulary.campus",
         ),
     )
+
+    # campus = RelationList(
+    #     title=_("person_campus", default="Campus"),
+    #     required=False,
+    #     default=[],
+    #     value_type=RelationChoice(
+    #         title=_("person_campus", default="Campus"),
+    #         vocabulary=StaticCatalogVocabulary(
+    #             {"portal_type": ["campus"], "review_state": "published"}
+    #         ),
+    #     ),
+    # )
     # email = Email(
     #     title=_("person_email", default="Email"),
     #     required=True,

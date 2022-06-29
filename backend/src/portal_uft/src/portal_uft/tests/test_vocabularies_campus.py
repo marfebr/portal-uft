@@ -9,45 +9,43 @@ import unittest
 VOCABULARY = "portal_uft.vocabulary.campus"
 
 
-class TestIndustriesVocabulary(unittest.TestCase):
+class TestCampusVocabulary(unittest.TestCase):
 
     layer = PORTAL_UFT_INTEGRATION_TESTING
-    portal_type = "campus"
 
-    def setUp(self):
+    def setUp(self) -> None:
         self.portal = self.layer["portal"]
         setRoles(self.portal, TEST_USER_ID, ["Manager"])
+        # Create test content
+        self.create_content()
 
-        obj = api.content.create(
-            container=self.portal,
-            type=self.portal_type,
-            title="Palmas",
-            description="Campus da UFT em Palmas",
-            city="palmas",
-            email="palmas@uft.edu.br",
-            extension="2022",
-        )
-        obj1 = api.content.create(
-            container=self.portal,
-            type=self.portal_type,
-            title="Miracema",
-            description="Campus da UFT em Miracema",
-            city="miracema",
-            email="miracema@uft.edu.br",
-            extension="5555",
-        )
+    def create_content(self):
+        contents = [
+            # id, title, city
+            ("palmas", "Palmas", "palmas"),
+            ("miracema", "Miracema", "miracema"),
+        ]
+        for id_, title, city in contents:
+            api.content.create(
+                container=self.portal,
+                **{
+                    "type": "campus",
+                    "id": id_,
+                    "title": title,
+                    "description": f"Campus da UFT em {title}",
+                    "city": city,
+                    "email": f"{city}@uft.edu.br",
+                },
+            )
 
     def test_vocabulary(self):
         vocab = api.vocabulary.get(VOCABULARY)
-
-        items = [item for item in vocab]
-
-        self.assertEqual(len(items), 2)
+        terms = [term for term in vocab]
+        self.assertEqual(len(terms), 2)
 
     def test_vocabulary_titles(self):
         vocab = api.vocabulary.get(VOCABULARY)
+        titles = [term.title for term in vocab]
 
-        items = [item.title for item in vocab]
-
-        self.assertIn("Palmas", items)
-        self.assertIn("Miracema", items)
+        self.assertIn("Palmas", titles)
+        self.assertIn("Miracema", titles)

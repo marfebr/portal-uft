@@ -9,5 +9,13 @@
 -->
   <!-- Metadata
   <column value="industry" />
--->
+  -->
+  <!-- Index -->
+  <index meta_type="KeywordIndex"
+         name="campus"
+  >
+    <indexed_attr value="campus" />
+  </index>
+  <!-- Metadata -->
+  <column value="campus" />
 </object>
