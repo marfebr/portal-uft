@@ -67,3 +67,22 @@ class PersonIntegrationTest(unittest.TestCase):
         data.title = "Alex Limi"
         data.email = "alex.limi@uft.edu.br"
         IPerson.validateInvariants(data)
+
+    def test_permssion_anonymous(self):
+        obj = api.content.create(
+            container=self.portal,
+            type=self.portal_type,
+            title="Alex Limi",
+            description="Plone Founder",
+            email="limi@uft.edu.br",
+            extension="1999",
+        )
+        api.content.transition(obj=obj, transition="submit")
+        state = api.content.get_state(obj=obj)
+        self.assertEqual(state, "pending")
+
+        setRoles(self.portal, TEST_USER_ID, ["Manager"])
+        self.assertTrue(api.user.has_permission("View", obj=obj))
+        # Testar se Anonymous tem a permissão View
+        setRoles(self.portal, TEST_USER_ID, ["Anonymous"])
+        self.assertTrue(api.user.has_permission("View", obj=obj))

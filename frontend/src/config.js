@@ -15,6 +15,7 @@
 
 import CampusView from './components/View/CampusView';
 import PersonView from './components/View/PersonView';
+import blocks from '@package/components/Blocks';
 
 // All your imports required for the config here BEFORE this line
 import '@plone/volto/config';
@@ -30,6 +31,10 @@ export default function applyConfig(config) {
     ...config.views.contentTypesViews,
     campus: CampusView,
     person: PersonView,
+  };
+  config.blocks.blocksConfig = {
+    ...config.blocks.blocksConfig,
+    ...blocks,
   };
   return config;
 }
