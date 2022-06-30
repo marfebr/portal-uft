@@ -1,12 +1,9 @@
 """person profile in the site"""
-from plone.app.vocabularies.catalog import StaticCatalogVocabulary
 from plone.dexterity.content import Container
 
 # from plone.schema.email import Email
 from plone.supermodel.model import Schema
 from portal_uft import _
-from z3c.relationfield.schema import RelationChoice
-from z3c.relationfield.schema import RelationList
 from zope import schema
 from zope.interface import implementer
 from zope.interface import invariant
